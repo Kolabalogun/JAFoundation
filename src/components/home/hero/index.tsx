@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import Header from "../../common/header";
 
 const Hero = () => {
@@ -8,27 +9,47 @@ const Hero = () => {
       <div className="relative text-white h-full herobg  ">
         <div className="h-full w-full bg-[#000000b6] absolute top-0 left-0 "></div>
 
-        <div className="relative  h-full flex flex-col justify-center center">
-          <div className="">
-            <h1 className="">Empowering Lives.</h1>
-            <h1 className="">Eradicating Poverty</h1>
+        <div className="relative px-5 sm:px-10   h-full flex flex-col justify-center center">
+          <div className="flex flex-col gap-4 md:gap-0">
+            <h1 className=" text-4xl md:text-[59px] md:font-bold font-semibold leading-[46px] md:leading-[85px]  ">
+              Empowering <br className="md:hidden" />
+              <span className="italic font-medium md:font-bold md:not-italic">
+                Lives
+              </span>
+              .
+            </h1>
+            <h1 className="text-4xl md:text-[59px] md:font-bold font-semibold leading-[46px] md:leading-[85px]  ">
+              Eradicating <br className="md:hidden" />
+              <span className="italic font-medium md:font-bold md:not-italic ">
+                Poverty
+              </span>
+              .
+            </h1>
           </div>
           <div className="mt-5">
-            <p className="text-base font-medium">
+            <p className="md:text-base text-sm font-medium leading-6">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptatum eligendi porro <br /> alias exercitationem odit nulla
               commodi.
             </p>
           </div>
 
-          <div className="flex my-16 gap-12">
+          <div className="flex md:flex-row flex-col my-16 gap-6 md:gap-12 ">
             <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white">
               Donate Now
             </button>
 
-            <button className=" border-[#b71a88] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
-              Read More
-            </button>
+            <Link
+              to={"about"}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={800}
+            >
+              <button className=" border-[#b71a88] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
+                Read More
+              </button>
+            </Link>
           </div>
         </div>
       </div>

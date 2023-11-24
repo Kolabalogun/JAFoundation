@@ -16,7 +16,7 @@ export const event: eventType[] = [
     id: 0,
     img: img,
 
-    link: "/",
+    link: "/article/1",
     location: "Malete, Ilorin",
     date: "Aug 10, 2023",
     title: "Become a Volunteer",
@@ -28,7 +28,7 @@ export const featuredEvent: eventType[] = [
     id: 0,
     img: img,
 
-    link: "/",
+    link: "/article/1",
     location: "Malete, Ilorin",
     date: "Aug 10, 2023",
     title: "Become a Volunteer",

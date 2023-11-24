@@ -13,7 +13,7 @@ const Roles: React.FC = () => {
   };
 
   return (
-    <section className="center  flex flex-1 justify-between  py-40 mt-24 gap-16">
+    <section className="center  flex flex-1 flex-col xl:flex-row justify-between items-center  py-40 mt-24 gap-16 px-5 sm:px-10 ">
       {content.map((content: contentType, index: number) => (
         <div
           key={content.id}
@@ -21,7 +21,7 @@ const Roles: React.FC = () => {
             content.id !== 0
               ? "bg-[#ecf2f5] text-[#262626] hover:text-white hover:bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] "
               : "bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] text-white"
-          } flex-1 flex flex-col gap-5 items-center text-center cursor-pointer p-12 rounded-3xl`}
+          } flex-1 flex flex-col gap-5 max-w-lg xl:w-full items-center text-center cursor-pointer p-12 rounded-3xl`}
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >

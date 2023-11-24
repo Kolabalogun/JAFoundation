@@ -31,8 +31,8 @@ const Header = () => {
   }, []);
 
   return (
-    <nav className="z-50">
-      <div className="  center py-4 md:py-5 flex items-center justify-between">
+    <nav className="z-50 ">
+      <div className="  center py-4 md:py-5 flex items-center justify-between px-5 sm:px-10 ">
         <a href="/" className="h-10 md:h-16">
           <img src={Logo} alt="Logo" className="h-full" />
         </a>

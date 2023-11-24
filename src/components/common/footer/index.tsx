@@ -7,8 +7,8 @@ import location from "../../../assets/location-dot-solid.svg";
 
 const Footer = () => {
   return (
-    <section className="bg-[#262626]  py-40">
-      <div className="center flex justify-between items-start">
+    <section className="bg-[#262626]  py-40  px-5 sm:px-10 ">
+      <div className="center flex xl:flex-row flex-col justify-between items-start gap-16 xl:gap-0">
         <div style={{ flex: 2 }} className="flex flex-1 flex-col">
           <div className="text-white">
             <p className="font-semibold">JA FOUNDATION</p>
@@ -63,11 +63,11 @@ const Footer = () => {
                 203 Fake St. Mountain View, San Francisco, California, USA
               </p>
             </div>
-            <a href="" className="flex items-center gap-5">
+            <a href="/" className="flex items-center gap-5">
               <img src={phone} alt="" className="h-4" />
               <p className="text-sm font-medium">+1 234 5677 890</p>
             </a>
-            <a href="" className="flex items-center gap-5">
+            <a href="/" className="flex items-center gap-5">
               <img src={mail} alt="" className="h-4" />
               <p className="text-sm font-medium">jafoundation@gmail.com</p>
             </a>

@@ -16,19 +16,19 @@ type NavLinksProps = {
 export const NavLinks: NavLinksProps[] = [
   {
     title: "Home",
-    link: "home",
+    link: "/home",
   },
   {
     title: "About",
-    link: "about",
+    link: "/about",
   },
   {
-    title: "Portfolio",
-    link: "portfolio",
+    title: "Articles",
+    link: "/articles",
   },
   {
     title: "Contact",
-    link: "contact",
+    link: "/contact",
   },
 ];
 export const SocialLinks: NavLinksProps[] = [
@@ -55,6 +55,6 @@ export const EventLinks: NavLinksProps[] = [
   {
     title: "Empoweering Futures",
     date: "Aug 10, 2023",
-    link: "/",
+    link: "/article/1",
   },
 ];

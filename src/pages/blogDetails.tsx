@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/container/layout";
 
 import aboutImg from "../assets/img.jpg";
+import { PageTye, useGlobalContext } from "../context/useGlobalContext";
 const BlogDetails: React.FC = () => {
+  const { setpageType } = useGlobalContext();
+
+  useEffect(() => {
+    window.scroll(0, 0);
+    setpageType(PageTye.blog);
+  }, []);
+
   return (
     <Layout bannerTitle="Articles">
       <>

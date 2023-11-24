@@ -26,11 +26,13 @@ const Contact: React.FC = () => {
     validationSchema: Yup.object({
       firstName: Yup.string()
         .min(2, "Must be more than 2 character")
-        .required("Required"),
+        .required("Please enter your name"),
       message: Yup.string()
         .min(5, "Must be more than 2 character")
-        .required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
+        .required("Your message can't be empty"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("Please enter your email"),
     }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -94,7 +96,9 @@ const Contact: React.FC = () => {
                     {...formik.getFieldProps("firstName")}
                   />
                   {formik.touched.firstName && formik.errors.firstName ? (
-                    <div>{formik.errors.firstName}</div>
+                    <div className="text-red-500 py-2 text-sm font-medium">
+                      {formik.errors.firstName}
+                    </div>
                   ) : null}
                 </div>
                 <div className="flex flex-col">
@@ -108,7 +112,9 @@ const Contact: React.FC = () => {
                     {...formik.getFieldProps("email")}
                   />
                   {formik.touched.email && formik.errors.email ? (
-                    <div>{formik.errors.email}</div>
+                    <div className="text-red-500 py-2 text-sm font-medium">
+                      {formik.errors.email}
+                    </div>
                   ) : null}
                 </div>{" "}
                 <div className="flex flex-col">
@@ -122,7 +128,9 @@ const Contact: React.FC = () => {
                     {...formik.getFieldProps("message")}
                   />
                   {formik.touched.message && formik.errors.message ? (
-                    <div>{formik.errors.message}</div>
+                    <div className="text-red-500 py-2 text-sm font-medium">
+                      {formik.errors.message}
+                    </div>
                   ) : null}
                 </div>
                 <div className="flex justify-center">

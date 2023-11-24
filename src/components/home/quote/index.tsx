@@ -3,8 +3,8 @@ import img2 from "../../../assets/img2.jpg";
 
 const Quote = () => {
   return (
-    <section className="center py-40 grid grid-cols-2 gap-10">
-      <div className="flex flex-col mr-10">
+    <section className="center py-40 grid grid-cols-1 xl:grid-cols-2 xl:gap-10 gap-[100px] px-5 sm:px-10 ">
+      <div className="flex flex-col xl:mr-10">
         <h1 className="text-[#262626] text-3xl md:text-[40px] md:leading-[52px] leading-[36px] font-semibold ">
           We love to help all the children that have problems in the world.
         </h1>
@@ -17,7 +17,7 @@ const Quote = () => {
         </p>
       </div>
 
-      <div className="flex gap-6">
+      <div className="flex md:flex-row flex-col gap-6">
         <div className=" h-72 w-full">
           <img
             src={img}
