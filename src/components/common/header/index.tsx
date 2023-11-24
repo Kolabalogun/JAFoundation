@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "../../../assets/logo.png";
-import useMediaQuery from "../../../hook/useMediaQuery";
+// import useMediaQuery from "../../../hook/useMediaQuery";
 import { NavLinks } from "./links";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
@@ -12,7 +12,23 @@ const Header = () => {
   const { pageType } = useGlobalContext();
 
   const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false);
-  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
+  const [isAboveMediumScreens, setIsAboveMediumScreens] = useState<boolean>(
+    window.innerWidth >= 1060
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsAboveMediumScreens(window.innerWidth >= 1060);
+    };
+
+    handleResize(); // Initialize state on mount
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="z-50">
