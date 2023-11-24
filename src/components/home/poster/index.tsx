@@ -6,7 +6,7 @@ const Poster = () => {
       <div className="flexallcenter  flex-col relative text-white">
         <p className="font-semibold">JA FOUNDATION</p>
 
-        <h1 className="postertxt mt-3">
+        <h1 className="postertxt text-5xl leading-[62px] xl:text-[59px]  mt-7 xl:leading-normal xl:mt-3">
           The Smallest Act of Kindness is Worth More <br /> Than the Grandest
           Intention
         </h1>

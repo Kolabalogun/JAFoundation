@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
     <Layout bannerTitle="Contact">
       <>
         <section className="center py-40">
-          <div className="grid grid-cols-2">
+          <div className="grid gap-16 xl:gap-0 xl:grid-cols-2">
             <div>
               <div className="">
                 <p className="text-[#2d2d2d] text-2xl font-medium">
@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="shadow-lg p-9 rounded bg-[#eff1f1]">
+            <div className="shadow-lg p-6 xl:p-9 rounded bg-[#eff1f1]">
               <form
                 className="flex flex-col gap-5 "
                 onSubmit={formik.handleSubmit}

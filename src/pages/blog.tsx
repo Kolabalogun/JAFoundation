@@ -29,7 +29,7 @@ const Blog: React.FC = () => {
               </Link>
 
               <div className="border">
-                <div className=" sm:p-[50px] p-[10px] py-[50px]">
+                <div className=" sm:p-[50px] p-[20px] py-[50px]">
                   <div className="text-gray-700 text-[12px] mb-[5px]  uppercase  ">
                     15th November, 2023
                   </div>

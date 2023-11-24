@@ -167,7 +167,7 @@ const BlogDetails: React.FC = () => {
               </p>
             </div>
 
-            <div className="my-24 grid gap-16 grid-cols-3">
+            <div className="my-24 grid gap-16 xl:grid-cols-3">
               <div className="cursor-pointer">
                 <img
                   src={aboutImg}
