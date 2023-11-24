@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import content, { contentType } from "./content";
 
-const Roles = () => {
+const Roles: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleMouseEnter = (index: number) => {
