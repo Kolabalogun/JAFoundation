@@ -50,9 +50,15 @@ const About: React.FC = () => {
                 Join us, inspire change, foster kindness.
               </h1>
 
-              <button className=" border-[#fff] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
-                Volunteer
-              </button>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScBGOEaZ6Ouah9pk29k6xayUWCKChcYJ1q8ve8l32bXyyr8bw/viewform"
+                target="_blank"
+              >
+                <button className=" border-[#fff] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
+                  {" "}
+                  Volunteer
+                </button>
+              </a>
             </div>
           </div>
         </div>

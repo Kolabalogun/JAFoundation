@@ -79,9 +79,14 @@ const Events = () => {
                     elit.
                   </p>
                 </div>
-                <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-medium xl:w-48  text-white mt-7 xl:mt-0 ">
-                  Volunteer
-                </button>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScBGOEaZ6Ouah9pk29k6xayUWCKChcYJ1q8ve8l32bXyyr8bw/viewform"
+                  target="_blank"
+                >
+                  <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-medium xl:w-48  text-white mt-7 xl:mt-0 ">
+                    Volunteer
+                  </button>
+                </a>
               </div>
             ))}
           </div>
