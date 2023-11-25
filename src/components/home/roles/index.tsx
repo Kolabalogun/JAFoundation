@@ -39,7 +39,7 @@ const Roles: React.FC = () => {
           </div>
 
           <h2 className="font-semibold text-2xl">{content.title}</h2>
-          <p className="font-medium text-[15px]">{content.txt}</p>
+          <p className="font-medium text-sm">{content.txt}</p>
         </div>
       ))}
     </section>

@@ -33,13 +33,12 @@ const Blog: React.FC = () => {
                   <div className="text-gray-700 text-[12px] mb-[5px]  uppercase  ">
                     15th November, 2023
                   </div>
-
-                  <a
-                    href="blog-standard-post.html"
+                  <Link
+                    to={`/article/1`}
                     className="text-black uppercase text-[16px]  font-semibold mb-[15px] "
                   >
                     Empowering Youths
-                  </a>
+                  </Link>
 
                   <p className="mt-4 text-[12px]">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.

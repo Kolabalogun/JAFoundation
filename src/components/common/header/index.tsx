@@ -56,7 +56,7 @@ const Header = () => {
             className="rounded-full bg-secondary-500 p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
-            <Bars3Icon className="h-9 w-9 md:h-10 md:w-10 text-black" />
+            <Bars3Icon className="h-7 w-7 md:h-10 md:w-10 text-black" />
           </button>
         )}
       </div>
@@ -66,7 +66,7 @@ const Header = () => {
           {/* CLOSE ICON */}
           <div className="flex justify-end p-12">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <XMarkIcon className="h-9 w-9 md:h-10 md:w-10" />
+              <XMarkIcon className="h-7 w-7 md:h-10 md:w-10" />
             </button>
           </div>
 
