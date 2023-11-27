@@ -1,23 +1,40 @@
-import { createContext, useContext, ReactNode, FC, useState } from "react";
-
-interface AppContextProps {
-  loading: boolean;
-  setloading: React.Dispatch<React.SetStateAction<boolean>>;
-  pageType: string;
-  setpageType: React.Dispatch<React.SetStateAction<PageTye>>;
-}
-
-const AppContext = createContext<AppContextProps | undefined>(undefined);
-
-interface AppProviderProps {
-  children: ReactNode;
-}
+import {
+  createContext,
+  useContext,
+  ReactNode,
+  FC,
+  useState,
+  useEffect,
+} from "react";
+import useFirestoreCollection from "../hook/useFiretoreCollection";
+import { fetchFirestoreData } from "../utils/fetchFirestoreData";
+import { About, Articles, Events, HomePageContents } from "../utils/types";
+import Loader from "../components/common/loader";
 
 export enum PageTye {
   home = "home",
   about = "about",
   blog = "articles",
   contact = "contact",
+}
+
+interface AppContextProps {
+  loading: boolean;
+  setloading: React.Dispatch<React.SetStateAction<boolean>>;
+  pageType: string;
+  setpageType: React.Dispatch<React.SetStateAction<PageTye>>;
+  eventsFromDB: Events[] | unknown;
+  articlesFromDB: Articles[] | unknown;
+  eventsLoader: boolean;
+  articlesLoader: boolean;
+  homePageContent: HomePageContents | null;
+  aboutPageContent: About | null;
+}
+
+const AppContext = createContext<AppContextProps | undefined>(undefined);
+
+interface AppProviderProps {
+  children: ReactNode;
 }
 
 const AppProvider: FC<AppProviderProps> = ({ children }) => {
@@ -27,6 +44,41 @@ const AppProvider: FC<AppProviderProps> = ({ children }) => {
   // page type
   const [pageType, setpageType] = useState<PageTye>(PageTye.home);
 
+  // get projects from firestore
+
+  const { data: eventsFromDB, loader: eventsLoader } =
+    useFirestoreCollection("events");
+
+  const { data: articlesFromDB, loader: articlesLoader } =
+    useFirestoreCollection("articles");
+
+  // get page contents
+
+  const [homePageContent, homePageContentF] = useState<HomePageContents | null>(
+    null
+  );
+  const [aboutPageContent, aboutPageContentF] = useState<About | null>(null);
+
+  const getPageContentDetail = async () => {
+    setloading(true);
+    const data = await fetchFirestoreData("contents", "hompage");
+    const aboutdata = await fetchFirestoreData("contents", "aboutpage");
+
+    if (data && aboutdata) {
+      homePageContentF(data as HomePageContents);
+      aboutPageContentF(aboutdata as About);
+    }
+    setloading(false);
+  };
+
+  useEffect(() => {
+    getPageContentDetail();
+  }, []);
+
+  if (loading || eventsLoader || articlesLoader) {
+    return <Loader />;
+  }
+
   return (
     <AppContext.Provider
       value={{
@@ -34,6 +86,12 @@ const AppProvider: FC<AppProviderProps> = ({ children }) => {
         setloading,
         pageType,
         setpageType,
+        eventsFromDB,
+        eventsLoader,
+        articlesFromDB,
+        articlesLoader,
+        homePageContent,
+        aboutPageContent,
       }}
     >
       {children}

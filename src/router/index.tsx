@@ -5,6 +5,7 @@ import Blog from "../pages/blog";
 
 import Contact from "../pages/contact";
 import BlogDetails from "../pages/blogDetails";
+import EventDetails from "../pages/eventDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/article/:id",
     element: <BlogDetails />,
+  },
+  {
+    path: "/event/:id",
+    element: <EventDetails />,
   },
   {
     path: "/contact",

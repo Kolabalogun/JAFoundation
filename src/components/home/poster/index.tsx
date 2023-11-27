@@ -1,4 +1,10 @@
+import { useGlobalContext } from "../../../context/useGlobalContext";
+
 const Poster = () => {
+
+
+  const { homePageContent } = useGlobalContext();
+
   return (
     <section className="posterbg min-h-[60vh] flexallcenter flex-col text-center relative px-5 sm:px-10  py-32 xl:py-0">
       <div className="h-full w-full bg-[#000000b6] absolute top-0 left-0 "></div>

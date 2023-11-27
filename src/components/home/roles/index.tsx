@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import content, { contentType } from "./content";
+import { useGlobalContext } from "../../../context/useGlobalContext";
 
 const Roles: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);

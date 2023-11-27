@@ -1,24 +1,21 @@
 import { Link } from "react-router-dom";
 import aboutImg from "../../../assets/img.jpg";
+import { useGlobalContext } from "../../../context/useGlobalContext";
 
 const About = () => {
+  const { homePageContent } = useGlobalContext();
   return (
     <section className="bg-[#996AA0] relative aboutbg" id="about">
       <div className="h-full w-full bg-[#000000c4] absolute top-0 left-0 "></div>
       <div className="center relative py-16 md:py-40 px-5 sm:px-10   grid grid-cols-1 xl:grid-cols-2 xl:gap-0 gap-16 ">
         <div className="flex flex-col xl:mr-16">
           <h1 className="text-white text-3xl md:text-[45px] md:leading-[52px] leading-[36px] font-semibold ">
-            Welcome to Our Foundation
+            {homePageContent?.aboutTitle}
           </h1>
           <div className="h-[2px] w-3/4 my-7 bg-[#fff]"></div>
 
           <p className=" text-white text-sm font-medium leading-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-            ipsam hic nulla soluta libero est adipisci, asperiores ex amet id,
-            saepe numquam accusamus porro vero sed magni, repellendus iste error
-            nobis corrupti atque tempore aut cupiditate labore. Tempora, eaque
-            cum similique ex eveniet ipsum ea voluptate fugiat. Accusantium,
-            doloribus quae.
+            {homePageContent?.aboutCaption}
           </p>
 
           <Link to={"/about"}>
