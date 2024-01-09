@@ -23,7 +23,7 @@ interface AppContextProps {
   setloading: React.Dispatch<React.SetStateAction<boolean>>;
   pageType: string;
   setpageType: React.Dispatch<React.SetStateAction<PageTye>>;
-  eventsFromDB: Events[] | unknown;
+  eventsFromDB: Events[] | null;
   articlesFromDB: Articles[] | unknown;
   eventsLoader: boolean;
   articlesLoader: boolean;
@@ -47,10 +47,10 @@ const AppProvider: FC<AppProviderProps> = ({ children }) => {
   // get projects from firestore
 
   const { data: eventsFromDB, loader: eventsLoader } =
-    useFirestoreCollection("events");
+    useFirestoreCollection<Events>("events");
 
   const { data: articlesFromDB, loader: articlesLoader } =
-    useFirestoreCollection("articles");
+    useFirestoreCollection<Articles>("articles");
 
   // get page contents
 
