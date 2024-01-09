@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../components/container/layout";
 import { Link } from "react-router-dom";
 import { PageTye, useGlobalContext } from "../context/useGlobalContext";
+import { Articles } from "../utils/types";
 
 const Blog: React.FC = () => {
   const { setpageType, articlesFromDB } = useGlobalContext();
@@ -16,7 +17,7 @@ const Blog: React.FC = () => {
       <>
         <section className="center py-40">
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-16">
-            {articlesFromDB?.map((article) => (
+            {articlesFromDB?.map((article: Articles) => (
               <div className="flex  flex-col w-full shadow-lg">
                 <Link to={`/article/${article?.id}`}>
                   <div className="cursor-pointer">

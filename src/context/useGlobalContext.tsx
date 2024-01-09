@@ -24,7 +24,7 @@ interface AppContextProps {
   pageType: string;
   setpageType: React.Dispatch<React.SetStateAction<PageTye>>;
   eventsFromDB: Events[] | null;
-  articlesFromDB: Articles[] | unknown;
+  articlesFromDB: Articles[] | null;
   eventsLoader: boolean;
   articlesLoader: boolean;
   homePageContent: HomePageContents | null;

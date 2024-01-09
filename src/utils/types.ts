@@ -35,6 +35,7 @@ export type HomePageContents = {
   serviceIIITitle: string;
   serviceIIICaption: string;
   serviceIIIImage: string;
+  quoteTxt: string;
 };
 
 export type About = {
