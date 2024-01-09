@@ -14,9 +14,12 @@ const About = () => {
           </h1>
           <div className="h-[2px] w-3/4 my-7 bg-[#fff]"></div>
 
-          <p className=" text-white text-sm font-medium leading-7">
-            {homePageContent?.aboutCaption}
-          </p>
+          <p
+            className=" text-white text-sm font-medium leading-7"
+            dangerouslySetInnerHTML={{
+              __html: `${homePageContent?.aboutCaption.substring(0, 350)}...`,
+            }}
+          />
 
           <Link to={"/about"}>
             <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white mt-10">

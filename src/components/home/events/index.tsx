@@ -1,12 +1,10 @@
-import { featuredEvent } from "./events";
-
-import Ads from "../../../assets/ads.jpg";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../../context/useGlobalContext";
 import { Events as EventType } from "../../../utils/types";
 
 const Events = () => {
-  const { eventsFromDB, homePageContent } = useGlobalContext();
+  const { eventsFromDB, homePageContent, aboutPageContent } =
+    useGlobalContext();
   return (
     <section className="center py-40 grid grid-cols-1 xl:grid-cols-2 xl:gap-10 gap-[100px] px-5 sm:px-10 ">
       <div className="flex flex-col xl:mr-16">
@@ -18,12 +16,17 @@ const Events = () => {
         <div className="flex  flex-col gap-5">
           {eventsFromDB?.map((event: EventType) => (
             <div key={event?.id} className="flex gap-8">
-              <div className="w-32 h-32">
-                <img
-                  src={event?.image}
-                  alt="filter"
-                  className="h-full w-full object-strech"
-                />
+              <div className=" ">
+                <div
+                  className="w-32 h-32
+                "
+                >
+                  <img
+                    src={event?.image}
+                    alt="filter"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
               <div className="flex gap-3   flex-col">
@@ -84,16 +87,13 @@ const Events = () => {
 
                 <p className="text-[#383838] text-sm font-medium leading-6">
                   {homePageContent?.featuredCauseCaption &&
-                  homePageContent?.featuredCauseCaption?.length > 100
-                    ? homePageContent?.featuredCauseCaption?.substring(0, 100) +
+                  homePageContent?.featuredCauseCaption?.length > 200
+                    ? homePageContent?.featuredCauseCaption?.substring(0, 200) +
                       "..."
                     : homePageContent?.featuredCauseCaption}
                 </p>
               </div>
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScBGOEaZ6Ouah9pk29k6xayUWCKChcYJ1q8ve8l32bXyyr8bw/viewform"
-                target="_blank"
-              >
+              <a href={aboutPageContent?.posterVolunteerLink} target="_blank">
                 <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-medium xl:w-48  text-white mt-7 xl:mt-0 ">
                   Volunteer
                 </button>

@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 
-import aboutImg from "../assets/img.jpg";
-
 import Layout from "../components/container/layout";
 import { PageTye, useGlobalContext } from "../context/useGlobalContext";
 
 const About: React.FC = () => {
-  const { setpageType } = useGlobalContext();
+  const { setpageType, aboutPageContent } = useGlobalContext();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -17,28 +15,22 @@ const About: React.FC = () => {
     <Layout bannerTitle="About Us">
       <>
         <section className=" relative ">
-          <div className="center relative py-40 grid grid-cols-1 lg:grid-cols-2 px-5 sm:px-10  ">
-            <div className="flex flex-col xl:mr-16">
+          <div className="center relative py-40 grid grid-cols-1 gap-10  px-5 sm:px-10  ">
+            <div className="flex flex-col  ">
               <h1 className=" text-3xl md:text-[45px] md:leading-[52px] leading-[36px] font-semibold ">
-                Welcome to Our Foundation
+                {aboutPageContent?.aboutTitle}
               </h1>
-              <div className="h-[3px] w-3/4 my-7 bg-[#b71a88]"></div>
+              <div className="h-[3px] w-1/4 my-7 bg-[#b71a88]"></div>
 
-              <p className="  text-sm font-medium leading-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente ipsam hic nulla soluta libero est adipisci, asperiores
-                ex amet id, saepe numquam accusamus porro vero sed magni,
-                repellendus iste error nobis corrupti atque tempore aut
-                cupiditate labore. Tempora, eaque cum similique ex eveniet ipsum
-                ea voluptate fugiat. Accusantium, doloribus quae. saepe numquam
-                accusamus porro vero sed magni, repellendus iste error nobis
-                corrupti atque tempore aut cupiditate labore. Tempora, eaque cum
-                similique ex eveniet ipsum ea voluptate fugiat. Accusantium,
-                doloribus quae.
-              </p>
+              <p
+                className="  text-sm font-medium leading-7"
+                dangerouslySetInnerHTML={{
+                  __html: `${aboutPageContent?.aboutCaption}`,
+                }}
+              />
             </div>
-            <div className=" mt-5 md:mt-0">
-              <img src={aboutImg} alt="" />
+            <div className=" mt-5  ">
+              <img src={aboutPageContent?.aboutImg} alt="" className="w-full" />
             </div>
           </div>
         </section>
@@ -47,15 +39,11 @@ const About: React.FC = () => {
           <div className="center">
             <div className="flex lg:flex-row gap-16 lg:gap-0 flex-col justify-between items-center">
               <h1 className=" text-white lg:text-start text-center text-4xl font-semibold ">
-                Join us, inspire change, foster kindness.
+                {aboutPageContent?.posterTxt}
               </h1>
 
-              <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScBGOEaZ6Ouah9pk29k6xayUWCKChcYJ1q8ve8l32bXyyr8bw/viewform"
-                target="_blank"
-              >
+              <a href={aboutPageContent?.posterVolunteerLink} target="_blank">
                 <button className=" border-[#fff] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
-                  {" "}
                   Volunteer
                 </button>
               </a>
@@ -67,49 +55,56 @@ const About: React.FC = () => {
           <div className="   grid grid-cols-1 xl:grid-cols-2 ">
             <div className="flex flex-col xl:mr-16">
               <h1 className=" text-3xl xl:text-4xl font-semibold ">
+                Meet Our Founder
+              </h1>
+              <div className="h-[3px] w-1/4 my-7 bg-[#b71a88]"></div>
+
+              <p
+                className="  text-sm font-medium leading-7"
+                dangerouslySetInnerHTML={{
+                  __html: `${aboutPageContent?.founderCaption}`,
+                }}
+              />
+            </div>
+            <div className=" mt-5 md:mt-0">
+              <img src={aboutPageContent?.missionImg} alt="" />
+            </div>
+          </div>
+          <div className=" mt-36  grid grid-cols-1 xl:grid-cols-2 ">
+            <div className="xl:mr-16 ">
+              <img src={aboutPageContent?.missionImg} alt="" />
+            </div>
+            <div className="flex flex-col  mt-5 md:mt-0">
+              <h1 className=" text-3xl xl:text-4xl font-semibold ">
                 Our Mission
               </h1>
               <div className="h-[3px] w-1/4 my-7 bg-[#b71a88]"></div>
 
-              <p className="  text-sm font-medium leading-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente ipsam hic nulla soluta libero est adipisci, asperiores
-                ex amet id, saepe numquam accusamus porro vero sed magni,
-                repellendus iste error nobis corrupti atque tempore aut
-                cupiditate labore. Tempora, eaque cum similique ex eveniet ipsum
-                ea voluptate fugiat. Accusantium, doloribus quae. saepe numquam
-                accusamus porro vero sed magni, repellendus iste error nobis
-                corrupti atque tempore aut cupiditate labore. Tempora, eaque cum
-                similique ex eveniet ipsum ea voluptate fugiat. Accusantium,
-                doloribus quae.
-              </p>
-            </div>
-            <div className=" mt-5 md:mt-0">
-              <img src={aboutImg} alt="" />
+              <p
+                className="  text-sm font-medium leading-7"
+                dangerouslySetInnerHTML={{
+                  __html: `${aboutPageContent?.missionCaption}`,
+                }}
+              />
             </div>
           </div>
           <div className=" mt-36  grid grid-cols-1 lg:grid-cols-2 ">
-            <div className=" xl:mr-16">
-              <img src={aboutImg} alt="" />
-            </div>
-            <div className="flex flex-col mt-10 xl:mt-0 ">
+            <div className="xl:mr-16 flex flex-col mt-10 xl:mt-0 ">
               <h1 className=" text-3xl xl:text-4xl font-semibold ">
                 Our Vision
               </h1>
               <div className="h-[3px] w-1/4 my-7 bg-[#b71a88]"></div>
 
-              <p className="  text-sm font-medium leading-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente ipsam hic nulla soluta libero est adipisci, asperiores
-                ex amet id, saepe numquam accusamus porro vero sed magni,
-                repellendus iste error nobis corrupti atque tempore aut
-                cupiditate labore. Tempora, eaque cum similique ex eveniet ipsum
-                ea voluptate fugiat. Accusantium, doloribus quae. saepe numquam
-                accusamus porro vero sed magni, repellendus iste error nobis
-                corrupti atque tempore aut cupiditate labore. Tempora, eaque cum
-                similique ex eveniet ipsum ea voluptate fugiat. Accusantium,
-                doloribus quae.
-              </p>
+              <p
+                className="  text-sm font-medium leading-7"
+                dangerouslySetInnerHTML={{
+                  __html: `${aboutPageContent?.visionCaption}`,
+                }}
+              />
+            </div>
+
+            <div className=" ">
+              <img src={aboutPageContent?.visionImg} alt="" />
             </div>
           </div>
         </section>
