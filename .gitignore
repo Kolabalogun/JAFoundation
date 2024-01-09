@@ -27,3 +27,4 @@ pub
 .firebase
 .firebaserc
 .env
+.env.local
