@@ -6,19 +6,19 @@ const Events = () => {
   const { eventsFromDB, homePageContent, aboutPageContent } =
     useGlobalContext();
   return (
-    <section className="center py-40 grid grid-cols-1 xl:grid-cols-2 xl:gap-10 gap-[100px] px-5 sm:px-10 ">
+    <section className="center py-20 sm:py-40  grid grid-cols-1 xl:grid-cols-2 xl:gap-10 gap-[100px] px-5 sm:px-10 ">
       <div className="flex flex-col xl:mr-16">
         <h1 className="text-[#262626] text-3xl md:text-[38px] font-semibold ">
           Events
         </h1>
         <div className="h-[3px] w-48 xl:w-1/3  mt-7 mb-12 bg-[#b71a88]"></div>
 
-        <div className="flex  flex-col gap-5">
+        <div className="flex  flex-col sm:gap-5 gap-8">
           {eventsFromDB?.map((event: EventType) => (
-            <div key={event?.id} className="flex gap-8">
+            <div key={event?.id} className="flex flex-col sm:flex-row gap-8">
               <div className=" ">
                 <div
-                  className="w-32 h-32
+                  className="w-full sm:w-32 h-full sm:h-32
                 "
                 >
                   <img

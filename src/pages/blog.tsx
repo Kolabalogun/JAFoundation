@@ -24,7 +24,7 @@ const Blog: React.FC = () => {
                     <img
                       src={article?.mainImg}
                       alt="blogImg"
-                      className="w-[100%] h-[300px]  sm:h-[400px] xmd:h-[450px]"
+                      className="w-[100%] h-[300px]  sm:h-[400px] md:h-[450px] object-cover"
                     />
                   </div>
                 </Link>

@@ -14,7 +14,7 @@ const Roles: React.FC = () => {
   };
 
   return (
-    <section className="center  flex flex-1 flex-col xl:flex-row justify-between items-center  py-40 mt-24 gap-16 px-5 sm:px-10 ">
+    <section className="center  flex flex-1 flex-col xl:flex-row justify-between items-center py-20 sm:py-40 mt-24 gap-16 px-5 sm:px-10 ">
       {[
         {
           caption: homePageContent?.serviceICaption,

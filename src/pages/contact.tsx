@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="shadow-lg p-6 xl:p-9 rounded bg-[#eff1f1]">
+            <div className="shadow-lg px-3 py-6 sm:p-6 xl:p-9 rounded bg-[#eff1f1]">
               <form
                 className="flex flex-col gap-5 "
                 onSubmit={formik.handleSubmit}
