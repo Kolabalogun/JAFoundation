@@ -39,11 +39,12 @@ const Events = () => {
                   </div>
                 </div>
 
-                <p className="text-[#555555] text-sm">
-                  {event?.caption.length > 100
-                    ? event?.caption.substring(0, 100) + "..."
-                    : event?.caption}
-                </p>
+                <p
+                  className="text-[#555555] text-sm"
+                  dangerouslySetInnerHTML={{
+                    __html: `${event?.caption.substring(0, 100)}...`,
+                  }}
+                />
 
                 <Link to={`/event/${event.id}`}>
                   <button className="text-[#b71a88] text-sm font-medium text-left ">

@@ -41,11 +41,12 @@ const Blog: React.FC = () => {
                       {article?.title}
                     </Link>
 
-                    <p className="mt-4 text-[12px]">
-                      {article?.paragraphOne.length > 200
-                        ? article?.paragraphOne.substring(0, 200) + "..."
-                        : article?.paragraphOne}
-                    </p>
+                    <p
+                      className="mt-4 text-[12px]"
+                      dangerouslySetInnerHTML={{
+                        __html: `${article?.paragraphOne.substring(0, 200)}...`,
+                      }}
+                    />
 
                     <Link to={`/article/${article.id}`}>
                       <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] text-white leading-5 text-[9px] px-[17px] py-1 uppercase rounded-[5px] mt-4 font-bold transition-colors delay-200 duration-300">

@@ -48,7 +48,12 @@ const EventDetails: React.FC = () => {
             </div>
 
             <div className="my-24">
-              <p className="text-sm font-medium leading-6">{form?.caption}</p>
+              <p
+                className="text-sm font-medium leading-6"
+                dangerouslySetInnerHTML={{
+                  __html: `${form?.caption}`,
+                }}
+              />
             </div>
 
             <div className="my-24 flex gap-10">

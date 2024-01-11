@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../../../context/useGlobalContext";
 
 const Poster = () => {
-  const { homePageContent } = useGlobalContext();
+  const { homePageContent, aboutPageContent } = useGlobalContext();
 
   return (
     <section className="posterbg min-h-[60vh] flexallcenter flex-col text-center relative px-5 sm:px-10  py-32 xl:py-0">
@@ -22,9 +22,11 @@ const Poster = () => {
             Donate Now
           </button>
 
-          <button className=" border-[#b71a88] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
-            Join Us
-          </button>
+          <a href={aboutPageContent?.posterVolunteerLink} target="_blank">
+            <button className=" border-[#b71a88] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
+              Join Us
+            </button>
+          </a>
         </div>
       </div>
     </section>

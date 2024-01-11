@@ -52,47 +52,61 @@ const BlogDetails: React.FC = () => {
             </div>
 
             <div className="my-24">
-              <p className="text-sm font-medium leading-6">
-                {form?.paragraphOne}
-              </p>
-            </div>
-
-            <div className="cursor-pointer">
-              <img
-                src={form?.secondImg}
-                alt="blogImg"
-                className="w-full h-full"
+              <p
+                className="text-sm font-medium leading-6"
+                dangerouslySetInnerHTML={{
+                  __html: `${form?.paragraphOne}`,
+                }}
               />
             </div>
 
+            {form?.secondImg && (
+              <div className="cursor-pointer">
+                <img
+                  src={form?.secondImg}
+                  alt="blogImg"
+                  className="w-full h-full"
+                />
+              </div>
+            )}
+
             <div className="my-24">
-              <p className="text-sm font-medium leading-6">
-                {form?.paragraphTwo}
-              </p>
+              <p
+                className="text-sm font-medium leading-6"
+                dangerouslySetInnerHTML={{
+                  __html: `${form?.paragraphTwo}`,
+                }}
+              />
             </div>
 
             <div className="my-24 grid gap-16 xl:grid-cols-3">
-              <div className="cursor-pointer">
-                <img
-                  src={form?.thirdImg}
-                  alt="blogImg"
-                  className="w-full rounded-md h-full"
-                />
-              </div>
-              <div className="cursor-pointer">
-                <img
-                  src={form?.fourthImg}
-                  alt="blogImg"
-                  className="w-full rounded-md h-full"
-                />
-              </div>
-              <div className="cursor-pointer">
-                <img
-                  src={form?.fifthImg}
-                  alt="blogImg"
-                  className="w-full rounded-md h-full"
-                />
-              </div>
+              {form?.thirdImg && (
+                <div className="cursor-pointer">
+                  <img
+                    src={form?.thirdImg}
+                    alt="blogImg"
+                    className="w-full rounded-md h-full"
+                  />
+                </div>
+              )}
+              {form?.fourthImg && (
+                <div className="cursor-pointer">
+                  <img
+                    src={form?.fourthImg}
+                    alt="blogImg"
+                    className="w-full rounded-md h-full"
+                  />
+                </div>
+              )}
+              {form?.fifthImg && (
+                <div className="cursor-pointer">
+                  <img
+                    src={form?.fifthImg}
+                    alt="blogImg"
+                    className="w-full rounded-md h-full"
+                  />
+                </div>
+              )}
             </div>
           </div>
         </section>
