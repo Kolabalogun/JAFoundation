@@ -10,7 +10,7 @@ import * as Yup from "yup";
 import { PageTye, useGlobalContext } from "../context/useGlobalContext";
 
 const Contact: React.FC = () => {
-  const { setpageType } = useGlobalContext();
+  const { setpageType, homePageContent } = useGlobalContext();
 
   useEffect(() => {
     window.scroll(0, 0);
@@ -53,7 +53,16 @@ const Contact: React.FC = () => {
 
               <div className="flex gap-4 mt-8">
                 {SocialLinks.map((social) => (
-                  <a className="border border-[#b21a86] rounded-md p-1 cursor-pointer">
+                  <a
+                    href={
+                      social.title === "Twitter"
+                        ? homePageContent?.twitterLink
+                        : social.title === "Instagram"
+                        ? homePageContent?.instagramLink
+                        : homePageContent?.linkedInLink
+                    }
+                    className="border border-[#b21a86] rounded-md p-1 cursor-pointer"
+                  >
                     <img
                       src={social.img2}
                       alt={social.title}
@@ -66,16 +75,21 @@ const Contact: React.FC = () => {
                 <div className="flex items-center gap-5">
                   <img src={location} alt="" className="h-4" />
                   <p className="text-sm font-medium">
-                    203 Fake St. Mountain View, San Francisco, California, USA
+                    {homePageContent?.address ||
+                      "203 Fake St. Mountain View, San Francisco, California, USA"}
                   </p>
                 </div>
                 <a href="" className="flex items-center gap-5">
                   <img src={phone} alt="" className="h-4" />
-                  <p className="text-sm font-medium">+1 234 5677 890</p>
+                  <p className="text-sm font-medium">
+                    {homePageContent?.phoneNumber || "+1 234 5677 890"}
+                  </p>
                 </a>
                 <a href="" className="flex items-center gap-5">
                   <img src={mail} alt="" className="h-4" />
-                  <p className="text-sm font-medium">jafoundation@gmail.com</p>
+                  <p className="text-sm font-medium">
+                    {homePageContent?.email || "jafoundation@gmail.com"}
+                  </p>
                 </a>
               </div>
             </div>
