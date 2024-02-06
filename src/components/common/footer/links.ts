@@ -1,9 +1,11 @@
 import Twitter from "../../../assets/twitter.svg";
 import Instagram from "../../../assets/instagram.svg";
-import LinkedIn from "../../../assets/linkedin.svg";
+
 import TwitterI from "../../../assets/twitter - Copy.svg";
 import InstagramI from "../../../assets/instagram - Copy.svg";
-import LinkedInI from "../../../assets/linkedin - Copy.svg";
+
+import FB from "../../../assets/fb.svg";
+import FBc from "../../../assets/fbwhite.svg";
 
 type NavLinksProps = {
   title: string;
@@ -27,6 +29,10 @@ export const NavLinks: NavLinksProps[] = [
     link: "/articles",
   },
   {
+    title: "Donate",
+    link: "/donations",
+  },
+  {
     title: "Contact",
     link: "/contact",
   },
@@ -45,9 +51,9 @@ export const SocialLinks: NavLinksProps[] = [
     link: "/",
   },
   {
-    title: "LinkedIn",
-    img: LinkedIn,
-    img2: LinkedInI,
+    title: "Facebook",
+    img: FBc,
+    img2: FB,
     link: "/",
   },
 ];

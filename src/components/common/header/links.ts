@@ -17,6 +17,10 @@ export const NavLinks: NavLinksProps[] = [
     link: "/articles",
   },
   {
+    title: "Donate",
+    link: "/donations",
+  },
+  {
     title: "Contact",
     link: "/contact",
   },

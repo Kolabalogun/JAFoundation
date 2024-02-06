@@ -45,7 +45,7 @@ const Header = () => {
                 className={`${
                   pageType === title.toLowerCase() &&
                   "border-b-[#b11a85] border-b-[2px]"
-                } "text-base font-medium linked cursor-pointer py-3  mx-10 text-primary dark:text-primary  "`}
+                } "text-base font-medium linked cursor-pointer py-3  mx-8 text-primary dark:text-primary  "`}
               >
                 {title}
               </Link>

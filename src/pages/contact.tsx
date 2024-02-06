@@ -75,8 +75,7 @@ const Contact: React.FC = () => {
                 <div className="flex items-center gap-5">
                   <img src={location} alt="" className="h-4" />
                   <p className="text-sm font-medium">
-                    {homePageContent?.address ||
-                      "203 Fake St. Mountain View, San Francisco, California, USA"}
+                    {homePageContent?.address || "Ilorin, Kwara State, Nigeria"}
                   </p>
                 </div>
                 <a href="" className="flex items-center gap-5">

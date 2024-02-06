@@ -16,6 +16,7 @@ export enum PageTye {
   about = "about",
   blog = "articles",
   contact = "contact",
+  donation = "donation",
 }
 
 interface AppContextProps {
