@@ -35,9 +35,31 @@ const Contact: React.FC = () => {
         .required("Please enter your email"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      sendEmail(values);
     },
   });
+
+  const sendEmail = async (values) => {
+    try {
+      const response = await fetch("http://localhost:3001/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        alert("Email sent successfully!");
+      } else {
+        const errorText = await response.text();
+        alert(`Failed to send email: ${errorText}`);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  };
 
   return (
     <Layout bannerTitle="Contact">
