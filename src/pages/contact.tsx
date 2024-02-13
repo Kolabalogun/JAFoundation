@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     },
   });
 
-  const sendEmail = async (values) => {
+  const sendEmail = async (values: any) => {
     try {
       const response = await fetch("http://localhost:3001/send-email", {
         method: "POST",
