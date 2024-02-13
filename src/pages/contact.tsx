@@ -106,7 +106,10 @@ const Contact: React.FC = () => {
                     {homePageContent?.phoneNumber || "+1 234 5677 890"}
                   </p>
                 </a>
-                <a href="" className="flex items-center gap-5">
+                <a
+                  href="mailto:jafoundationosun@gmail.com"
+                  className="flex items-center gap-5"
+                >
                   <img src={mail} alt="" className="h-4" />
                   <p className="text-sm font-medium">
                     {homePageContent?.email || "jafoundation@gmail.com"}

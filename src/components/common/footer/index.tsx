@@ -8,6 +8,7 @@ import { useGlobalContext } from "../../../context/useGlobalContext";
 
 const Footer = () => {
   const { eventsFromDB } = useGlobalContext();
+  const { homePageContent } = useGlobalContext();
 
   return (
     <section className="bg-[#262626]  py-40  px-5 sm:px-10 ">
@@ -63,16 +64,21 @@ const Footer = () => {
             <div className="flex items-center gap-5">
               <img src={location} alt="" className="h-4" />
               <p className="text-sm font-medium">
-                Ilorin, Kwara State, Nigeria
+                {homePageContent?.address || "Ilorin, Kwara State, Nigeria"}
               </p>
             </div>
             <a href="/" className="flex items-center gap-5">
               <img src={phone} alt="" className="h-4" />
-              <p className="text-sm font-medium">+1 234 5677 890</p>
+              <p className="text-sm font-medium">
+                {homePageContent?.phoneNumber || "+1 234 5677 890"}
+              </p>
             </a>
-            <a href="/" className="flex items-center gap-5">
+            <a
+              href="mailto:jafoundationosun@gmail.com"
+              className="flex items-center gap-5"
+            >
               <img src={mail} alt="" className="h-4" />
-              <p className="text-sm font-medium">jafoundation@gmail.com</p>
+              <p className="text-sm font-medium">jafoundationosun@gmail.com</p>
             </a>
           </div>
         </div>
