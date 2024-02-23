@@ -48,13 +48,13 @@ export const SocialLinks: NavLinksProps[] = [
     title: "Instagram",
     img: Instagram,
     img2: InstagramI,
-    link: "/",
+    link: "https://www.instagram.com/jafoundation/?igshid=OGQ5ZDc2ODk2ZA%3D%3D",
   },
   {
     title: "Facebook",
     img: FBc,
     img2: FB,
-    link: "/",
+    link: "https://web.facebook.com/profile.php?id=61553071014063",
   },
 ];
 export const EventLinks: NavLinksProps[] = [
