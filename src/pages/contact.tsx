@@ -1,13 +1,20 @@
 import React, { useEffect } from "react";
 import Layout from "../components/container/layout";
 import { SocialLinks } from "../components/common/footer/links";
-
+import { toast } from "react-toastify";
 import phone from "../assets/phone-solid - Copy.svg";
 import mail from "../assets/envelope-solid - Copy.svg";
 import location from "../assets/location-dot-solid - Copy.svg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { PageTye, useGlobalContext } from "../context/useGlobalContext";
+import emailjs from "@emailjs/browser";
+
+type Formd = {
+  firstName: string;
+  message: string;
+  email: string;
+};
 
 const Contact: React.FC = () => {
   const { setpageType, homePageContent } = useGlobalContext();
@@ -40,25 +47,34 @@ const Contact: React.FC = () => {
     },
   });
 
-  const sendEmail = async (values: any) => {
-    try {
-      const response = await fetch("http://localhost:3001/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(values),
-      });
+  const sendEmail = (values: Formd) => {
+    const { firstName, message, email } = values;
 
-      if (response.ok) {
-        alert("Email sent successfully!");
-      } else {
-        const errorText = await response.text();
-        alert(`Failed to send email: ${errorText}`);
-      }
-    } catch (error) {
-      console.error("Error sending email:", error);
-    }
+    // let from_name = firstName;
+
+    emailjs
+      .send(
+        "service_ouihur7",
+        "template_005z03r",
+        {
+          email,
+          from_name: firstName,
+          message,
+        },
+        "93PBOefoL8el5j8ds"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+          console.log("Email Sent");
+          toast.success("Email Sent Successfully!");
+        },
+        function (error) {
+          console.log("FAILED...", error);
+          console.log("Email Failed!");
+          toast.error("Email Fail to send. Try again later");
+        }
+      );
   };
 
   return (
