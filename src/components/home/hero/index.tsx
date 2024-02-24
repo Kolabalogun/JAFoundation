@@ -38,10 +38,11 @@ const Hero = () => {
           </div>
 
           <div className="flex md:flex-row flex-col my-16 gap-6 md:gap-12 ">
-            <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white">
-              Donate Now
-            </button>
-
+            <Link to="/donations">
+              <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white">
+                Donate Now
+              </button>
+            </Link>
             <Link
               to={"about"}
               spy={true}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../../context/useGlobalContext";
 
 const Poster = () => {
@@ -18,10 +19,11 @@ const Poster = () => {
         />
 
         <div className="flex md:flex-row flex-col mt-16 gap-6 xl:gap-12">
-          <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white">
-            Donate Now
-          </button>
-
+          <Link to="/donations">
+            <button className="bg-gradient-to-r from-[#ef2f96] via-[#b71a88] to-[#800579] py-4 px-8 rounded-full font-semibold w-48  text-white">
+              Donate Now
+            </button>
+          </Link>
           <a href={aboutPageContent?.posterVolunteerLink} target="_blank">
             <button className=" border-[#b71a88] border-[2px] py-4 px-8 rounded-full font-semibold w-48  text-white">
               Join Us
