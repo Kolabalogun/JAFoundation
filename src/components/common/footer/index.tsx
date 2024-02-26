@@ -20,7 +20,10 @@ const Footer = () => {
 
           <div className="flex gap-4 mt-5">
             {SocialLinks.map((social) => (
-              <a className="border rounded-md p-1 cursor-pointer">
+              <a
+                href={social.link}
+                className="border rounded-md p-1 cursor-pointer"
+              >
                 <img src={social.img} alt={social.title} className="h-5 w-5" />
               </a>
             ))}
