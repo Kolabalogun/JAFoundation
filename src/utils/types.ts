@@ -46,7 +46,7 @@ export type About = {
   visionCaption: string;
   founderCaption: string;
   posterTxt: string;
-
+  founderImg: string;
   posterVolunteerLink: string;
 
   missionImg: string;

@@ -6,6 +6,8 @@ import { PageTye, useGlobalContext } from "../context/useGlobalContext";
 const About: React.FC = () => {
   const { setpageType, aboutPageContent } = useGlobalContext();
 
+  console.log(aboutPageContent);
+
   useEffect(() => {
     window.scroll(0, 0);
     setpageType(PageTye.about);
@@ -66,8 +68,8 @@ const About: React.FC = () => {
                 }}
               />
             </div>
-            <div className=" mt-5 md:mt-0">
-              <img src={aboutPageContent?.missionImg} alt="" />
+            <div className=" mt-5  md:mt-0">
+              <img src={aboutPageContent?.founderImg} alt="" />
             </div>
           </div>
           <div className=" mt-36  grid grid-cols-1 xl:grid-cols-2 ">
