@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: "Montserrat", sans-serif !important;
+  line-height: 1.5;
+  font-weight: 400;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white !important;
+  scroll-behavior: smooth;
+}
+
 @layer base {
   .bg-overlay {
     @apply bg-[#00000073];
@@ -17,17 +36,6 @@
   .line {
     @apply w-full bg-[#3d3d3d] h-[1px];
   }
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #ffffff !important;
-  font-family: "Montserrat", sans-serif;
 }
 
 h1,

@@ -42,7 +42,7 @@ export const SocialLinks: NavLinksProps[] = [
     title: "Twitter",
     img: Twitter,
     img2: TwitterI,
-    link: "/",
+    link: "https://x.com/jafoundation_1",
   },
   {
     title: "Instagram",
