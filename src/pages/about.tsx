@@ -73,9 +73,6 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className=" mt-36  grid grid-cols-1 xl:grid-cols-2 ">
-            <div className="xl:mr-16 ">
-              <img src={aboutPageContent?.missionImg} alt="" />
-            </div>
             <div className="flex flex-col  mt-5 md:mt-0">
               <h1 className=" text-3xl xl:text-4xl font-semibold ">
                 Our Mission
@@ -88,6 +85,9 @@ const About: React.FC = () => {
                   __html: `${aboutPageContent?.missionCaption}`,
                 }}
               />
+            </div>
+            <div className="xl:mr-16 ">
+              <img src={aboutPageContent?.missionImg} alt="" />
             </div>
           </div>
           <div className=" mt-36  grid grid-cols-1 lg:grid-cols-2 ">

@@ -22,7 +22,8 @@ const Hero = () => {
               .
             </h1>
             <h1 className="text-5xl md:text-[59px] md:font-bold font-semibold leading-[46px] md:leading-[85px]  ">
-              Eradicating <br className="md:hidden" />
+              Alleviating 
+              <br className="md:hidden" />
               <span className=" font-medium md:font-bold md:not-italic ">
                 Poverty
               </span>

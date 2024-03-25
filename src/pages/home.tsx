@@ -4,7 +4,7 @@ import Roles from "../components/home/roles";
 import About from "../components/home/about";
 import Events from "../components/home/events";
 import Poster from "../components/home/poster";
-import Quote from "../components/home/quote";
+// import Quote from "../components/home/quote";
 import Footer from "../components/common/footer";
 import { PageTye, useGlobalContext } from "../context/useGlobalContext";
 
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <About />
       <Events />
       <Poster />
-      <Quote />
+      {/* <Quote /> */}
       <Footer />
     </main>
   );
